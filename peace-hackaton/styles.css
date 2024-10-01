@@ -1,0 +1,101 @@
+/* Add background image */
+body {
+  background-image: url('SOLVEITLabs.PNG');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Style login container */
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style login and signup buttons */
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.login-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.signup-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.login-button:hover {
+  opacity: 0.8;
+}
+
+.signup-button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive design */
+
+/* Mobile devices (portrait and landscape) */
+@media only screen and (max-width: 768px) {
+  .login-container {
+    width: 80%;
+    padding: 20px;
+  }
+  .button-container {
+    bottom: 10px;
+  }
+  .login-button, .signup-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets and small laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .login-container {
+    width: 60%;
+    padding: 30px;
+  }
+  .button-container {
+    bottom: 20px;
+  }
+  .login-button, .signup-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Large laptops and desktops */
+@media only screen and (min-width: 1025px) {
+  .login-container {
+    width: 40%;
+    padding: 40px;
+  }
+  .button-container {
+    bottom: 30px;
+  }
+  .login-button, .signup-button {
+    padding: 12px 25px;
+    font-size: 18px;
+  }
+}
