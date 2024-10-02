@@ -9,22 +9,28 @@ body {
 }
 
 body {
-    background-image: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../img/contact_bg.jpeg');
     background-size: cover;
-    /* Cover the entire page */
-    background-position: center;
-    /* Center the image */
     background-repeat: no-repeat;
-    /* Prevent image repetition */
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
 header {
     background-color: #87CEEB;
     color: white;
-    /* This ensures header text is white */
     padding: 10px 0;
     text-align: center;
+}
+
+.contactHeadline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -34,15 +40,10 @@ h1 {
 
 }
 
-
 h2 {
     color: black;
     font-weight: bold;
 }
-
-
-
-
 
 form {
     background-color: white;
@@ -60,7 +61,12 @@ label {
     display: block;
     margin-top: 10px;
     color: #333;
-    /* Darker color for better contrast */
+}
+
+.contactMethod {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
 }
 
 input[type="text"],
@@ -68,11 +74,15 @@ input[type="email"],
 input[type="tel"],
 select,
 textarea {
-    width: 100%;
+    width: 85%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+textarea {
+    height: 8rem;
 }
 
 input[type="submit"] {
@@ -84,7 +94,6 @@ input[type="submit"] {
     cursor: pointer;
     margin-top: 15px;
     font-weight: bold;
-    /* Added bold text for buttons */
 }
 
 input[type="submit"]:hover {
