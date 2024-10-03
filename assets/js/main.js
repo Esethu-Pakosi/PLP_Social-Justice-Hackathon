@@ -1,9 +1,7 @@
-// Toggle Mobile Menu
-function toggleMenu() {
-    const mobileMenu = document.getElementById("mobileMenu");
-    if (mobileMenu.hidden === true) {
-        mobileMenu.hidden = false;
-    } else {
-        mobileMenu.hidden = true;
-    }
-}
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('.nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
