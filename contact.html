@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - SolveIT Labs</title>
     <meta name="keywords" content="contact, solveit, labs, innovative, solutions, team, contact us">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
 </head>
 
 <body>
@@ -15,9 +15,13 @@
         <h1>SolveIT Labs</h1>
     </header>
 
-    <h2>Contact Us</h2>
-    <p>We would love to hear from you. Please fill out the form below, and we will get back to you as soon as possible.
-    </p>
+    <div class="contactHeadline">
+        <h2>Contact Us</h2>
+        <p>
+            We would love to hear from you. Please fill out the form below,
+            and we will get back to you as soon as possible.
+        </p>
+    </div>
 
     <form name="contactForm" id="contactForm">
         <label for="firstName">First Name:</label><br>
@@ -45,11 +49,14 @@
             <option value="complaint">Complaint</option>
         </select><br><br>
 
-        <label>Preferred Contact Method:</label><br>
-        <input type="radio" id="contact_email" name="contact_method" value="email" required>
-        <label for="contact_email">Email</label><br>
-        <input type="radio" id="contact_phone" name="contact_method" value="phone">
-        <label for="contact_phone">Phone</label><br><br>
+        <label>Preferred Contact Method:</label>
+        <div class="contactMethod">
+            <input type="radio" id="contact_email" name="contact_method" value="email" required>
+            <label for="contact_email">Email</label>
+            <input type="radio" id="contact_phone" name="contact_method" value="phone">
+            <label for="contact_phone">Phone</label>
+        </div>
+        <br>
 
         <label for="message">Message:</label><br>
         <textarea id="message" name="message" placeholder="Enter your message" required></textarea><br><br>
