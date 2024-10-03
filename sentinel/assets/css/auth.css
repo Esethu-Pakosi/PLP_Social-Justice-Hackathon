@@ -1,74 +1,113 @@
+/* Add background image */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background: #f0f2f5;
-    /* Light grey background */
+    background-image: url('../img/auth_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-.auth-container {
-    display: flex;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.auth-form {
-    padding: 2rem;
-    flex: 1;
-    border-right: 1px solid #e0e0e0;
-}
-
-.auth-form:last-child {
-    border-right: none;
-}
-
-.auth-form h2 {
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+/* Style login container */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.auth-form input {
-    width: 100%;
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+/* Style login and signup buttons */
+.button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
-.auth-form button {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 1rem;
-    border: none;
-    background: #007bff;
-    /* Professional blue button */
+.login-button {
+    background-color: red;
     color: white;
-    font-weight: 600;
-    border-radius: 4px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    margin: 10px;
 }
 
-.auth-form button:hover {
-    background: #0056b3;
+.signup-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
 }
 
-.auth-form a {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
-    color: #007bff;
-    text-decoration: none;
+.login-button:hover {
+    opacity: 0.8;
 }
 
-.auth-form a:hover {
-    text-decoration: underline;
+.signup-button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive design */
+
+/* Mobile devices (portrait and landscape) */
+@media only screen and (max-width: 768px) {
+    .login-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .button-container {
+        bottom: 10px;
+    }
+
+    .login-button,
+    .signup-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Tablets and small laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .login-container {
+        width: 60%;
+        padding: 30px;
+    }
+
+    .button-container {
+        bottom: 20px;
+    }
+
+    .login-button,
+    .signup-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Large laptops and desktops */
+@media only screen and (min-width: 1025px) {
+    .login-container {
+        width: 40%;
+        padding: 40px;
+    }
+
+    .button-container {
+        bottom: 30px;
+    }
+
+    .login-button,
+    .signup-button {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
 }
