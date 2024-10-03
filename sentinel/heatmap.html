@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conflict Heatmap - Sentinel</title>
     <link rel="stylesheet" href="./assets/css/heatmap.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-heatmap/leaflet-heatmap.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+        .map-container {
+            position: relative;
+        }
+        .legend {
+            position: absolute;
+            top: 10px; /* Positioning from the top */
+            right: 10px; /* Positioning from the right */
+            width: 150px; /* Set a fixed width for the square shape */
+            height: 150px; /* Set a fixed height for the square shape */
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Make sure the legend is above other elements */
+        }
+        .legend h3 {
+            margin: 0 0 10px 0; /* Add some margin below the heading */
+            font-size: 16px;
+            text-align: center;
+        }
+        .legend p {
+            margin: 5px 0; /* Add some margin to paragraphs */
+            font-size: 14px;
+        }
+        .legend span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .red { background: red; }
+        .yellow { background: yellow; }
+        .green { background: green; }
+    </style>
 </head>
-
 <body>
     <div class="map-container">
         <div id="map"></div>
@@ -19,18 +61,50 @@
             <p><span class="green"></span> Low Risk</p>
         </div>
     </div>
-
+    
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-heatmap/leaflet-heatmap.js"></script>
     <script>
+        // Initialize the map
         var map = L.map('map').setView([0, 0], 2);
+
+        // Add OpenStreetMap tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // Example marker for conflicts
-        L.circle([6.5244, 3.3792], { radius: 50000, color: 'red' }).addTo(map).bindPopup('High Risk: Protest in Lagos');
-        L.circle([-1.286389, 36.817223], { radius: 50000, color: 'yellow' }).addTo(map).bindPopup('Medium Risk: Tension in Nairobi');
+        // Example heatmap data (latitude, longitude, intensity)
+        var heatData = [
+            [6.5244, 3.3792, 0.8],  // Lagos - High Risk
+            [-1.286389, 36.817223, 0.5], // Nairobi - Medium Risk
+            [37.7749, -122.4194, 0.3], // San Francisco - Low Risk
+            [34.0522, -118.2437, 0.9], // Los Angeles - High Risk
+            [51.5074, -0.1278, 0.6] // London - Medium Risk
+        ];
+
+        // Add heatmap layer
+        var heat = L.heatLayer(heatData, {
+            radius: 25,
+            blur: 15,
+            maxZoom: 17,
+        }).addTo(map);
+
+        // Add conflict markers
+        function addConflictMarker(lat, lng, riskLevel) {
+            var color = riskLevel === 'high' ? 'red' : riskLevel === 'medium' ? 'yellow' : 'green';
+            L.circle([lat, lng], {
+                radius: 50000,
+                color: color,
+                fillColor: color,
+                fillOpacity: 0.5
+            }).addTo(map).bindPopup(`${riskLevel.charAt(0).toUpperCase() + riskLevel.slice(1)} Risk: Conflict Detected`);
+        }
+
+        // Example markers for conflicts
+        addConflictMarker(6.5244, 3.3792, 'high');  // Lagos
+        addConflictMarker(-1.286389, 36.817223, 'medium'); // Nairobi
+        addConflictMarker(34.0522, -118.2437, 'high'); // Los Angeles
+        addConflictMarker(51.5074, -0.1278, 'medium'); // London
     </script>
 </body>
-
 </html>
