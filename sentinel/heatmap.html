@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 80dc77cf471d5e58fed8097c2fd858e7035e90bd
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conflict Heatmap</title>
     <link rel="stylesheet" href="./assets/css/heatmap.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://unpkg.com/leaflet-heatmap/leaflet-heatmap.css" />
     <style>
         body {
@@ -51,6 +56,10 @@
         .green { background: green; }
     </style>
 </head>
+=======
+</head>
+
+>>>>>>> 80dc77cf471d5e58fed8097c2fd858e7035e90bd
 <body>
     <div class="map-container">
         <div id="map"></div>
@@ -61,6 +70,7 @@
             <p><span class="green"></span> Low Risk</p>
         </div>
     </div>
+<<<<<<< HEAD
     
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-heatmap/leaflet-heatmap.js"></script>
@@ -69,10 +79,17 @@
         var map = L.map('map').setView([0, 0], 2);
 
         // Add OpenStreetMap tile layer
+=======
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([0, 0], 2);
+>>>>>>> 80dc77cf471d5e58fed8097c2fd858e7035e90bd
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
+<<<<<<< HEAD
         // Example heatmap data (latitude, longitude, intensity)
         var heatData = [
             [6.5244, 3.3792, 0.8],  // Lagos - High Risk
@@ -108,3 +125,12 @@
     </script>
 </body>
 </html>
+=======
+        // Example marker for conflicts
+        L.circle([6.5244, 3.3792], { radius: 50000, color: 'red' }).addTo(map).bindPopup('High Risk: Protest in Lagos');
+        L.circle([-1.286389, 36.817223], { radius: 50000, color: 'yellow' }).addTo(map).bindPopup('Medium Risk: Tension in Nairobi');
+    </script>
+</body>
+
+</html>
+>>>>>>> 80dc77cf471d5e58fed8097c2fd858e7035e90bd

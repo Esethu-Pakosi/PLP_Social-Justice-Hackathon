@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="logo">Sentinel</div>
+            <h2>Analytics Dashboard</h2>
+            <div class="profile-icon">👤</div>
+        </header>
+
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Real-Time Alerts</a></li>
+                    <li><a href="#">Heatmap Visualization</a></li>
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <section class="alerts-overview">
+                <h3>Recent Alerts</h3>
+                <ul>
+                    <li><span class="alert high">🔥 High Risk</span> - Lagos, Nigeria - 2 mins ago</li>
+                    <li><span class="alert medium">⚠️ Medium Risk</span> - Nairobi, Kenya - 10 mins ago</li>
+                    <li><span class="alert low">✅ Low Risk</span> - Johannesburg, South Africa - 30 mins ago</li>
+                </ul>
+            </section>
+
+            <section class="heatmap">
+                <h3>Conflict Heatmap</h3>
+                <div class="map" id="heatmap">[Interactive Map Placeholder]</div>
+            </section>
+
+            <section class="trends">
+                <h3>Conflict Trends</h3>
+                <canvas id="trendChart"></canvas>
+            </section>
+
+            <section class="key-metrics">
+                <h3>Key Metrics</h3>
+                <div class="metric-cards">
+                    <div class="card">Total Alerts: <strong>150</strong></div>
+                    <div class="card">Active Subscriptions: <strong>3</strong></div>
+                    <div class="card">Resolved Alerts: <strong>75</strong></div>
+                    <div class="card">New Alerts Today: <strong>5</strong></div>
+                </div>
+            </section>
+
+            <section class="quick-actions">
+                <h3>Quick Actions</h3>
+                <button class="action-button">Report an Incident</button>
+                <button class="action-button">Manage Subscriptions</button>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Sentinel. All Rights Reserved.</p>
+            <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const trendChart = document.getElementById('trendChart').getContext('2d');
+        new Chart(trendChart, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Conflict Incidents',
+                    data: [20, 50, 30, 70, 40],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>

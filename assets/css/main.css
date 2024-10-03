@@ -1,0 +1,288 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h4 {
+    color:#954f73;
+}
+.header-logo {
+    margin-left: -40px;
+    margin-top: -25px;
+    margin-bottom: -50px;
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #484848;
+}
+
+.container,
+.nav-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #103955;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #484848;
+    font-weight: 500;
+    font-weight: 700;
+}
+
+.nav-links li a:hover {
+    color: #103955;
+}
+
+/* Hero Section */
+.hero {
+    background: #103955;
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 520px) {
+    .hero-btns {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.hero-btns .btn {
+    padding: 12px 30px;
+    background-color: #FFFFFF;
+    color: #103955;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero-btns .secondary-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #954f73;
+}
+
+/* About Section */
+.about {
+    padding: 50px 0;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .about h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.about p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px 0;
+    background-color: #FFFFFF;
+}
+
+.projects h2 {
+    color:#484848;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 480px) {
+    .projects h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.projects-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.project-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #103955;
+}
+
+.project-card p {
+    font-size: 1rem;
+}
+
+/* Get Involved Section */
+.get-involved {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.get-involved h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .get-involved h2 {
+        font-size: 2rem;
+    }
+}
+
+.involved-btns {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.involved-btns .btn {
+    padding: 12px 30px;
+    background-color: #103955;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.involved-btns .secondary-btn {
+    background-color: #ffffff;
+    color: #103955;
+    border: 2px solid #954f73;
+}
+
+@media (min-width: 520px) {
+    .involved-btns {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Footer */
+.footer {
+    background: #103955;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Mobile Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #484848;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #ffffff;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 0 2rem;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav.active .nav-links {
+        display: flex;
+    }
+}
