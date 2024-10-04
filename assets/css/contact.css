@@ -2,16 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     background-image: url('../img/contact_bg.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,30 +12,38 @@ body {
     background-attachment: fixed;
 }
 
-
 header {
-    background-color: #87CEEB;
+    background-color: #053a4f;
     color: white;
     padding: 10px 0;
     text-align: center;
+}
+
+header .nav-links a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+header .nav-links a:hover {
+    color: #87CEEB;
+    transition: color 0.3s ease;
 }
 
 .contactHeadline {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-h1 {
+    text-align: center;
+    background-color: #4D7A84;
     color: white;
-
-    font-weight: bold;
-
 }
 
-h2 {
-    color: black;
-    font-weight: bold;
+h2,
+{
+color: #053a4f;
+font-weight: bold;
 }
 
 form {
@@ -54,19 +55,22 @@ form {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex-grow: 1;
+
 }
 
 label {
     font-weight: bold;
     display: block;
     margin-top: 10px;
-    color: #333;
+    color: #053a4f;
 }
 
 .contactMethod {
     display: flex;
     flex-direction: row;
     margin-top: 0.5rem;
+    gap: 1rem;
+
 }
 
 input[type="text"],
@@ -86,7 +90,7 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #87CEEB;
+    background-color: #053a4f;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -98,26 +102,33 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #6EC6E8;
+    transition: background-color 0.3s ease;
 }
 
 footer {
-    background-color: #333;
+    background-color: #053a4f;
+
     color: white;
+
     text-align: center;
-    padding: 15px;
+
+    padding: 15px 0;
+    width: 100%;
     margin-top: auto;
 }
 
 footer p {
-    margin: 0;
+    margin: 5px 0;
+    line-height: 1.5;
 }
 
 footer a {
     color: #87CEEB;
     text-decoration: none;
-    margin: 0 10px;
+
 }
 
 footer a:hover {
     text-decoration: underline;
+
 }
