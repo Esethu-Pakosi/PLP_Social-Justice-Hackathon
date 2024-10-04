@@ -6,6 +6,8 @@ This is the codebase for SolveIT Labs website, developed as part of the PLP Soci
 
 SolveIT Labs is a technology-driven company dedicated to developing innovative solutions that address socio-political, environmental, and governance challenges in African communities. Through cutting-edge tech and community feedback, we create impactful solutions to real-world problems, empowering the next generation of changemakers.
 
+![SolveIT Labs Logo](./assets/img/solveit_labs.png)
+
 Tagline: Innovating Solutions, Empowering Communities
 
 ## Overview
@@ -16,7 +18,7 @@ SolveIT Labs is dedicated to leveraging innovative technology to address pressin
 
 ### Sentinel
 
-![Sentinel Logo](link-to-sentinel-logo)
+![Sentinel Logo](./assets/img/sentinel_logo.png)
 
 - **Description**:
   Sentinel is an advanced public safety app designed to provide real-time alerts for violent conflicts and abductions, utilizing data analysis and community engagement.

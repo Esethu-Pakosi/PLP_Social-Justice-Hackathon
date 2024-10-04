@@ -1,0 +1,80 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/sentinel_logo.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass Effect Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Glass Form */
+.glass-form {
+    background-color: gray;
+    border-radius: 15px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 350px;
+}
+
+.glass-form h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.glass-form label {
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.glass-form input[type="text"],
+.glass-form input[type="email"],
+.glass-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(248, 248, 253, 0.902);
+    color: #080808;
+    font-size: 16px;
+}
+
+.glass-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(64, 68, 150);
+    border: none;
+    border-radius: 5px;
+    color: #101010;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.glass-form input[type="submit"]:hover {
+    background-color: rgb(116, 150, 214);
+}

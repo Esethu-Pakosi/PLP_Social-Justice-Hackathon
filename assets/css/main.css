@@ -1,3 +1,9 @@
+:root {
+    --primary-color: #103955;  /* Dark Blue */
+    --secondary-color: #954f73; /* Dark Magenta */
+    --accent-color: #484848;   /* Gray */
+    --background-color: #FFFFFF; /* White */
+}
 /* General Styles */
 * {
     margin: 0;
@@ -10,7 +16,7 @@ html {
 }
 
 h4 {
-    color:#954f73;
+    color: var(--secondary-color);
 }
 .header-logo {
     margin-left: -40px;
@@ -24,8 +30,8 @@ h4 {
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #484848;
+    background-color: var(--background-color);
+    color: var(--accent-color);
 }
 
 .container,
@@ -44,14 +50,14 @@ header {
     position: sticky;
     top: 0;
     z-index: 50;
-    background-color: #fff;
+    background-color: var(--background-color);
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo h1 {
     font-size: 1.8rem;
-    color: #103955;
+    color: var(--primary-color);
 }
 
 .nav {
@@ -69,19 +75,20 @@ header {
 
 .nav-links li a {
     text-decoration: none;
-    color: #484848;
+    color: var(--accent-color);
     font-weight: 500;
-    font-weight: 700;
 }
 
-.nav-links li a:hover {
-    color: #103955;
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a:active {
+    color: var(--secondary-color); 
 }
 
 /* Hero Section */
 .hero {
-    background: #103955;
-    color: #ffffff;
+    background: var(--primary-color);
+    color: var(--background-color);
     padding: 100px 0;
     text-align: center;
 }
@@ -102,6 +109,25 @@ header {
     gap: 10px;
 }
 
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 40px;
+    padding: 5px 20px;
+    background-color: var(--primary-color);  
+    color: var(--background-color);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color); 
+}
+
+
 @media (min-width: 520px) {
     .hero-btns {
         flex-direction: row;
@@ -111,8 +137,8 @@ header {
 
 .hero-btns .btn {
     padding: 12px 30px;
-    background-color: #FFFFFF;
-    color: #103955;
+    background-color: var(--background-color);
+    color: var(--primary-color);
     border-radius: 5px;
     text-decoration: none;
     font-weight: 500;
@@ -120,8 +146,8 @@ header {
 
 .hero-btns .secondary-btn {
     background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #954f73;
+    color: var(--background-color);
+    border: 2px solid var(--secondary-color);
 }
 
 /* About Section */
@@ -150,11 +176,11 @@ header {
 /* Projects Section */
 .projects {
     padding: 50px 0;
-    background-color: #FFFFFF;
+    background-color: var(--background-color);
 }
 
 .projects h2 {
-    color:#484848;
+    color:var(--accent-color);
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 30px;
@@ -173,7 +199,7 @@ header {
 }
 
 .project-card {
-    background: #ffffff;
+    background: var(--background-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -183,7 +209,7 @@ header {
 .project-card h3 {
     font-size: 1.6rem;
     margin-bottom: 10px;
-    color: #103955;
+    color: var(--primary-color);
 }
 
 .project-card p {
@@ -216,8 +242,8 @@ header {
 
 .involved-btns .btn {
     padding: 12px 30px;
-    background-color: #103955;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--background-color);
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -225,9 +251,9 @@ header {
 }
 
 .involved-btns .secondary-btn {
-    background-color: #ffffff;
-    color: #103955;
-    border: 2px solid #954f73;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
 }
 
 @media (min-width: 520px) {
@@ -240,8 +266,8 @@ header {
 
 /* Footer */
 .footer {
-    background: #103955;
-    color: #FFFFFF;
+    background: var(--primary-color);
+    color: var(--background-color);
     text-align: center;
     padding: 20px 0;
 }
@@ -256,7 +282,7 @@ header {
 .hamburger .bar {
     width: 25px;
     height: 3px;
-    background-color: #484848;
+    background-color: var(--accent-color);
     margin: 4px 0;
 }
 
@@ -264,7 +290,7 @@ header {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #ffffff;
+        background-color: var(--background-color);
         position: absolute;
         top: 60px;
         right: 20px;
@@ -285,4 +311,17 @@ header {
     .nav.active .nav-links {
         display: flex;
     }
+}
+
+footer p a {
+    color: var(--background-color);
+    text-decoration: none; 
+}
+
+footer p a:hover {
+    color:var(--secondary-color); 
+}
+
+.project-card .coming-soon-text {
+    color: var(--secondary-color); 
 }
