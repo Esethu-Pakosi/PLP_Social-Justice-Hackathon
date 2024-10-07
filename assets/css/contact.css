@@ -7,12 +7,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
+    margin-top: 40px;
     padding: 0;
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     background-image: url('../img/contact_bg.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,24 +20,73 @@ body {
 }
 
 header {
+    margin-top: -50px;
+    width: 100%;
+    position: fixed;
     background-color: var(--primary-color);
-    color: var(--background-color);
-    padding: 20px 0;
-    text-align: center;
-    font-size: 1.5rem;
 }
 
-.contactHeadline {
+.nav-container {
+    
+    margin-bottom: -30px;
+    margin-right: 20px;
     display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding-bottom: 0; 
+}
+
+.header-logo {   
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none; 
+    color: var(--background-color);  
+    font-weight: 500;
+    background-color: transparent;  
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a:active {
+    color: var(--secondary-color);  
+}
+
+.hamburger {
+    display: none;
     flex-direction: column;
-    align-items: center;
-    padding: 50px 0;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--background-color);
+    margin: 4px 0;
 }
 
 .contactHeadline h2 {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 2.5rem; 
     font-weight: 700;
+    margin-bottom: 10px; 
 }
 
 .contactHeadline p {
@@ -50,7 +98,7 @@ header {
 }
 
 form {
-    background-color: var(--background-color);
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 30px;
     margin: 20px auto;
     max-width: 800px;
@@ -85,7 +133,7 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--background-color);
     padding: 12px 30px;
     border: none;
@@ -98,7 +146,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: var(--secondary-color);
+    background-color: #833a5f; 
 }
 
 .contactMethod {
@@ -124,39 +172,53 @@ footer p {
 }
 
 footer a {
-    color: var(--secondary-color);
-    text-decoration: none;
+    color: var(--background-color); 
+    text-decoration: none; 
     margin: 0 10px;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: var(--secondary-color);
 }
+
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
+    .contactHeadline h2 {
+        font-size: 2rem;
+    }
+
     .nav-links {
         display: none;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 10px ;
+        text-align: left;
+        padding-right: 20px;
     }
 
     .hamburger {
         display: flex;
     }
 
-    .logo {
-        margin-top: -30px;
-        margin-bottom: -40px;
-        width: 320px;
+    .nav.active .nav-links {
+        display: flex;
     }
-
-    
 }
 
 @media (max-width: 480px) {
-    .logo {
-        margin-top: -30px;
-        margin-bottom: -40px;
-        width: 300px;
+    .header-logo {
+        width: 200px; 
     }
 
     form {

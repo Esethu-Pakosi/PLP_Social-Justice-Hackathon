@@ -37,7 +37,7 @@ body {
 .container,
 .nav-container {
     width: 90%;
-    margin: 0 auto;
+    margin:0 auto;
 }
 
 .nav-container {
@@ -50,7 +50,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 50;
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -75,7 +75,7 @@ header {
 
 .nav-links li a {
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--background-color);
     font-weight: 500;
 }
 
@@ -87,6 +87,7 @@ header {
 
 /* Hero Section */
 .hero {
+    margin-top: 60px;
     background: var(--primary-color);
     color: var(--background-color);
     padding: 100px 0;
@@ -282,7 +283,7 @@ header {
 .hamburger .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--accent-color);
+    background-color: var(--background-color);
     margin: 4px 0;
 }
 
@@ -290,7 +291,7 @@ header {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: var(--background-color);
+        background-color: var(--primary-color);
         position: absolute;
         top: 60px;
         right: 20px;

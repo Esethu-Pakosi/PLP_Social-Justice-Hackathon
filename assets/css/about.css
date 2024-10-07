@@ -5,88 +5,129 @@
     --background-color: #FFFFFF; /* White */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
     color: var(--accent-color);
     margin: 0;
-    padding: 0;
+    padding-top: 60px;
     line-height: 1.6;
-    padding-top: 100px; 
+    overflow-x: hidden;
 }
 
-header {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    padding: 20px 0; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
+.about-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slogan {
+    color: #954f73;
+}
+
+.header {
+    margin-top: -65px;
     width: 100%;
-    z-index: 1000;
+    position: fixed;
 }
 
-.logo {
-    margin-left: -40px;
-    margin-top: -45px;
+.header-logo {
+    margin-left: -20px;
+    margin-top: -25px;
     margin-bottom: -50px;
     width: 300px;
     height: auto;
     object-fit: contain;
 }
 
-header, .navbar {
-    background-color: var(--primary-color); 
-    border: none; 
-    padding: 0; 
-    margin-bottom: 20px; 
-    padding-top: 15px; 
-}
-
-.navbar-collapse {
-    background-color: var(--primary-color); 
-}
-
-.navbar-nav {
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     background-color: var(--primary-color);
-    margin: 0;
-    padding: 0;
-    margin-left: 10px;
-    padding-left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
-.navbar {
-    background-color: var(--primary-color); 
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar-nav .nav-link {
-    font-weight: 500; 
-    color: var(--background-color); 
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.navbar-nav .nav-link:hover, 
-.navbar-nav .nav-link:focus {
-    color: var(--secondary-color); 
+.nav-links li a {
+    text-decoration: none;
+    color: var(--background-color);  
+    font-weight: 500;
+    background-color: transparent;  
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.navbar-nav .nav-link.active {
-    color: var(--secondary-color); 
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a:active {
+    color: var(--secondary-color);  
 }
 
-.navbar-toggler {
-    margin-left: -200px; 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
-.slogan {
-    font-size: 1.1em;
-    font-style: italic;
-    color: var(--secondary-color);
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--background-color);
+    margin: 4px 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 10px ;
+        text-align: left;
+        padding-right: 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav.active .nav-links {
+        display: flex;
+    }
 }
 
 .about-content {
@@ -115,12 +156,12 @@ header, .navbar {
     margin-bottom: 20px;
 }
 
-ul {
+.values-list {
     list-style-type: none;
     padding: 0;
 }
 
-ul li {
+.values-list li {
     background: var(--background-color);
     padding: 15px;
     margin: 10px 0;
@@ -128,7 +169,7 @@ ul li {
     transition: background-color 0.3s;
 }
 
-ul li:hover {
+.values-list li:hover {
     background: #f7e0ec;
 }
 
@@ -137,7 +178,6 @@ footer {
     color: var(--background-color);
     text-align: center;
     padding: 15px;
-    width: 100%;
     font-size: 0.9em;
 }
 
@@ -148,17 +188,4 @@ footer p a {
 
 footer p a:hover {
     color: var(--secondary-color); 
-}
-
-@media (max-width: 768px) {
-    .navbar-nav {
-        flex-direction: column;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 75px; 
-        right: 20px;
-        width: 200px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
 }
