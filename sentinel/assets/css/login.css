@@ -1,30 +1,99 @@
-/* Add background image */
-body {
+/* Global Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    background-image: url('../img/sentinel_logo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+
 }
 
-/* Style login container */
+/* Body and Background */
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    /* Add some space between logo and nav */
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    /* Ensure nav behaves like a flex container */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    /* Flex display to align items in a row */
+    margin: 0;
+    /* Reset margin for nav ul */
+    padding: 0;
+    /* Reset padding for nav ul */
+}
+
+nav ul li {
+    margin-left: 1rem;
+    /* Space between nav items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    /* Add horizontal padding for better clickable area */
+}
+
+/* Hero Section */
+.hero {
+    background: #2980b9;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    flex-grow: 1;
+    /* Allow hero section to fill available space */
+}
+
+/* Login Form Container */
 .login-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: left;
+    position: relative;
+    margin: 50px auto;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    text-align: left;
 }
 
-/* Style login header */
+/* Login Header */
 .login-header {
     margin-bottom: 20px;
     text-align: center;
@@ -45,26 +114,21 @@ body {
     color: #666;
 }
 
-/* Responsive design for login container */
-@media (max-width: 768px) {
-    .login-container {
-        width: 300px;
-    }
+/* Label Styles */
+label {
+    display: block;
+    /* Ensures each label is on its own line */
+    margin-bottom: 5px;
+    /* Space between label and input */
+    font-size: 16px;
+    /* Font size for labels */
+    color: #1a1a2e;
+    /* Dark blue color */
+    font-weight: bold;
+    /* Bold text for emphasis */
 }
 
-@media (max-width: 480px) {
-    .login-container {
-        width: 250px;
-        padding: 20px;
-    }
-}
-
-/* Style login header */
-.login-header {
-    margin-bottom: 20px;
-}
-
-/* Style login form */
+/* Login Form Styles */
 #login_form {
     display: flex;
     flex-direction: column;
@@ -81,13 +145,17 @@ body {
 
 .input-wrap input {
     width: 100%;
-    height: 40px;
-    padding: 10px;
-    font-size: 16px;
+    height: 50px;
+    /* Increased height */
+    padding: 15px;
+    /* Increased padding for more space */
+    font-size: 18px;
+    /* Increased font size */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+/* Forgot Password Section */
 .forgot-password-container {
     display: flex;
     flex-direction: column;
@@ -106,12 +174,16 @@ body {
     color: #337ab7;
 }
 
+/* Login Button */
 .login-button {
-    background-color: red;
+    background-color: #007bff;
+    /* Matches CTA button from home.html */
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 5px;
+    /* Rounded corners for consistency */
     cursor: pointer;
     margin: 10px;
 }
@@ -120,8 +192,274 @@ body {
     opacity: 0.8;
 }
 
+/* Footer Section */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    /* Push footer to the bottom */
+    width: 100%;
+}
+
+/* Footer Links */
+footer a {
+    color: white;
+    /* Set text color to white */
+    text-decoration: none;
+    /* Remove underline */
+    margin: 0 10px;
+    /* Add space between links */
+}
+
+footer a:hover {
+    text-decoration: underline;
+    /* Underline on hover for better visibility */
+}
+
 /* Additional responsive styles */
+@media (max-width: 768px) {
+    .login-container {
+        width: 300px;
+    }
+}
+
 @media (max-width: 480px) {
+    .login-container {
+        width: 250px;
+        padding: 20px;
+    }
+
+    .forgot-password-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .show-password-checkbox {
+        margin-bottom: 10px;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    /* Align items to the left */
+    align-items: center;
+    flex-shrink: 0;
+    /* Ensure header doesn't shrink */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    /* Add some space between logo and nav */
+}
+
+nav {
+    display: flex;
+    /* Ensure nav behaves like a flex container */
+    margin-left: 0;
+    /* Reset margin to align nav to the left */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    /* Flex display to align items in a row */
+    margin: 0;
+    /* Reset margin for nav ul */
+    padding: 0;
+    /* Reset padding for nav ul */
+}
+
+nav ul li {
+    margin-left: 0;
+    /* Remove space between nav items to align to the left */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+    /* Add horizontal padding for clickable area */
+}
+
+/* Hero Section */
+.hero {
+    background: #2980b9;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    flex-grow: 1;
+    /* Allow hero section to fill available space */
+}
+
+/* Login Form Container */
+.login-container {
+    position: relative;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    text-align: left;
+}
+
+/* Login Header */
+.login-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.login-header h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.login-header h4 {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Label Styles */
+label {
+    display: block;
+    /* Ensures each label is on its own line */
+    margin-bottom: 5px;
+    /* Space between label and input */
+    font-size: 16px;
+    /* Font size for labels */
+    color: #1a1a2e;
+    /* Dark blue color */
+    font-weight: bold;
+    /* Bold text for emphasis */
+}
+
+/* Login Form Styles */
+#login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap input {
+    width: 100%;
+    height: 50px;
+    /* Increased height */
+    padding: 15px;
+    /* Increased padding for more space */
+    font-size: 18px;
+    /* Increased font size */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Forgot Password Section */
+.forgot-password-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.show-password-checkbox {
+    float: left;
+}
+
+.forgot-password-link {
+    float: right;
+    text-decoration: none;
+    color: #337ab7;
+}
+
+/* Login Button */
+.login-button {
+    background-color: #007bff;
+    /* Matches CTA button from home.html */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    /* Rounded corners for consistency */
+    cursor: pointer;
+    margin: 10px;
+}
+
+.login-button:hover {
+    opacity: 0.8;
+}
+
+/* Footer Section */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    /* Push footer to the bottom */
+    width: 100%;
+    flex-shrink: 0;
+    /* Make sure footer does not shrink */
+}
+
+/* Footer Links */
+footer a {
+    color: white;
+    /* Set text color to white */
+    text-decoration: none;
+    /* Remove underline */
+    margin: 0 10px;
+    /* Add space between links */
+}
+
+footer a:hover {
+    text-decoration: underline;
+    /* Underline on hover for better visibility */
+}
+
+/* Additional responsive styles */
+@media (max-width: 768px) {
+    .login-container {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 250px;
+        padding: 20px;
+    }
+
     .forgot-password-container {
         flex-direction: column;
         align-items: flex-start;
