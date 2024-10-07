@@ -87,7 +87,6 @@ header {
 
 /* Hero Section */
 .hero {
-    margin-top: 60px;
     background: var(--primary-color);
     color: var(--background-color);
     padding: 100px 0;
