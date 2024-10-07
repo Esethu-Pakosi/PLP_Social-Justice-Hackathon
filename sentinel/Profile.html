@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Profile Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="profile.js" defer></script>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Left Sidebar Section -->
+        <div class="sidebar">
+            <div class="profile-photo">
+                <img src="https://via.placeholder.com/150" alt="Profile Image">
+                <h2>Name Surname</h2>
+                <p class="email">email@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Main Profile Form Section -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Edit Profile</h1>
+                <div class="action-buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="button" class="save-btn" onclick="validateForm()">Save</button>
+                </div>
+            </div>
+            
+            <form class="profile-form" id="profileForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName">
+                        <span class="error" id="firstNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName">
+                        <span class="error" id="lastNameError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password">
+                    <a href="#" class="change-password">Change Password</a>
+                    <span class="error" id="passwordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email">
+                    <span class="error" id="emailError"></span>
+                </div>
+
+                <div class="form-group phone-container">
+                    <label>Phone</label>
+                    <select id="countryCode">
+                        <option value="+1">+27 (South Africa)</option>
+                        <option value="+91">+254 (Kenya)</option>
+                        <option value="+44">+233 (Ghana)</option>
+                        <option value="+27">+234 (Nigeria)</option>
+                    </select>
+                    <input type="text" id="phone">
+                    <span class="error" id="phoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" id="address">
+                    <span class="error" id="addressError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" id="nation">
+                        <span class="error" id="nationError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Language</label>
+                        <input type="text" id="language">
+                        <span class="error" id="languageError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Slogan</label>
+                    <input type="text" id="slogan">
+                    <span class="error" id="sloganError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="gender">
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error" id="genderError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date" id="dob">
+                        <span class="error" id="dobError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Twitter</label>
+                    <input type="url" id="twitter">
+                    <span class="error" id="twitterError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="url" id="facebook">
+                    <span class="error" id="facebookError"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
