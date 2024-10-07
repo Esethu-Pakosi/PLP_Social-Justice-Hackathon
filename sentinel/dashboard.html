@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sentinel</title>
     <link rel="stylesheet" href="./assets/css/dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
     <div class="dashboard-container">
         <header>
-            <div class="logo">Sentinel</div>
+            <div class="logoContainer">
+                <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+                <div class="logo">Sentinel</div>
+                <!-- <img width="200" height="50" src="./assets/img/sentinel_logo.png" alt="sentinel logo" /> -->
+            </div>
             <h2>Analytics Dashboard</h2>
-            <div class="profile-icon">👤</div>
+            <a href="./profile.html" class="profile-icon">👤</a>
         </header>
 
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar" style="display: none;">
             <nav>
                 <ul>
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="./real-time-alerts.html">Real-Time Alerts</a></li>
+                    <li><a href="./alerts.html">Real-Time Alerts</a></li>
                     <li><a href="./heatmap.html">Heatmap Visualization</a></li>
                     <li class="active"><a href="#">Dashboard</a></li>
                     <li><a href="./profile.html">Profile</a></li>
@@ -42,9 +46,9 @@
                 </ul>
             </section>
 
-            <section class="heatmap">
+            <section class="">
                 <h3>Conflict Heatmap</h3>
-                <div class="map" id="heatmap">[Interactive Map Placeholder]</div>
+                <div class="heatmap" id="heatmap">[Interactive Map Placeholder]</div>
             </section>
 
             <section class="trends">
@@ -71,26 +75,87 @@
 
         <footer>
             <p>&copy; 2024 Sentinel. All Rights Reserved.</p>
-            <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </footer>
     </div>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <!-- Heatmap.js (must be loaded first) -->
+    <script src="https://cdn.jsdelivr.net/npm/heatmapjs" defer></script>
+    <!-- Leaflet Heatmap Plugin (load this after heatmap.js) -->
+    <script src="https://unpkg.com/leaflet-heatmap@1.0.0/leaflet-heatmap.js" defer></script>
+    <!-- JavaScript code for the Conflict Heatmap -->
     <script>
-        const trendChart = document.getElementById('trendChart').getContext('2d');
-        new Chart(trendChart, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May'],
-                datasets: [{
-                    label: 'Conflict Incidents',
-                    data: [20, 50, 30, 70, 40],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            loadConflictHeatmap();
         });
+        function loadConflictHeatmap() {
+            const testData = {
+                max: 8,  // Maximum intensity value
+                data: [
+                    { lat: 6.5244, lng: 3.3792, count: 6 }, // Lagos
+                    { lat: 9.0579, lng: 7.4951, count: 4 }, // Abuja
+                    { lat: -1.2921, lng: 36.8219, count: 5 }, // Nairobi
+                    { lat: -26.2041, lng: 28.0473, count: 3 } // Johannesburg
+                ]
+            };
+
+            // Add a tile layer (heatmap skin)
+            const baseLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            });
+
+            const cfg = {
+                radius: 1,  // Adjust the radius to the scale of your heatmap
+                maxOpacity: .8,
+                scaleRadius: true,
+                useLocalExtrema: true,
+                latField: 'lat',
+                lngField: 'lng',
+                valueField: 'count'   // 'count' represents the intensity of conflict
+            }
+
+            const heatmapLayer = new HeatmapOverlay(cfg);
+
+            const heatmap = new L.Map('heatmap', {
+                center: new L.LatLng(9.0820, 8.6753), // Latitude and Longitude of Nigeria
+                zoom: 5,
+                layers: [baseLayer, heatmapLayer]
+            });
+
+            heatmapLayer.setData(testData);
+        }
     </script>
+
+    <!-- JavaScript code for the Conflict Trends Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        loadConflictTrends();
+        function loadConflictTrends() {
+            document.addEventListener("DOMContentLoaded", () => {
+                const trendChart = document.getElementById('trendChart').getContext('2d');
+                new Chart(trendChart, {
+                    type: 'line',
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May'],
+                        datasets: [{
+                            label: 'Conflict Incidents',
+                            data: [20, 50, 30, 70, 40],
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    }
+                });
+            });
+
+        }
+    </script>
+
+    <!-- Custom Dashboard Script -->
+    <script src="./assets/js/dashboard.js" defer></script>
 </body>
 
 </html>
